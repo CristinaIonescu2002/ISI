@@ -1,0 +1,19 @@
+{
+  "name": "urbanwastemanagement",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "dependencies": {
+    "@angular/fire": "^18.0.1",
+    "express": "^4.21.1",
+    "firebase": "^10.14.1",
+    "msnodesqlv8": "^4.4.0",
+    "mssql": "^11.0.1"
+  }
+}

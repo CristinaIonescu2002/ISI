@@ -1,0 +1,87 @@
+.rangs-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  max-width: 600px;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+// title
+.rangs-header h2 {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.rangs-avatar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+// Detaliile profilului
+.rangs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rangs-item label {
+  font-size: 14px;
+  color: #666;
+}
+
+.rangs-item input,
+.rangs-item textarea {
+  width: 97%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.rangs-item input[disabled],
+.rangs-item textarea[disabled] {
+  background-color: #f0f0f0;
+}
+
+// Butoanele pentru editare si salvare
+.rangs-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rangs-actions button {
+  padding: 10px 20px;
+  background-color: #4CAF50; // Culoare consistenta
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rangs-actions button:hover {
+  background-color: #45a049;
+}
+
+.rangs-actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

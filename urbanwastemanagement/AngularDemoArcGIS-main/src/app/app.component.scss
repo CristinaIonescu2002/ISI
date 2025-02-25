@@ -1,0 +1,122 @@
+.navbar {
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 15px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.nav-links a.active {
+  background-color: #388e3c;
+  font-weight: bold;
+}
+
+.nav-actions .logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-actions .logout-btn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+// popup
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: popup-fade-in 0.3s ease-out;
+}
+
+//popup buttons
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content .btn-confirm {
+  background-color: #066538;
+  color: white;
+}
+
+.popup-content .btn-confirm:hover {
+  background-color: #05502c;
+}
+
+.popup-content .btn-cancel {
+  background-color: #d9534f;
+  color: white;
+}
+
+.popup-content .btn-cancel:hover {
+  background-color: #c9302c;
+}
+
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

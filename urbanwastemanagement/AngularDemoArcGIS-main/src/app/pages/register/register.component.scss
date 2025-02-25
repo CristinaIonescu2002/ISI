@@ -1,0 +1,76 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  
+    .auth-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .form-group {
+        margin-bottom: 15px;
+    
+        label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+    
+        input {
+          width: 95%;
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      }
+    
+      .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    
+      .error-message {
+        color: red;
+        margin-top: 10px;
+        text-align: center;
+      }
+    
+      p {
+        text-align: center;
+        margin-top: 10px;
+    
+        a {
+          color: #007bff;
+          text-decoration: none;
+    
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    } 
+  }
+  

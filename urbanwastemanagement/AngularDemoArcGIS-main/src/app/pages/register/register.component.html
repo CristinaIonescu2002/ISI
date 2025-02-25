@@ -1,0 +1,18 @@
+<div class="register-container">
+    <div class="auth-card">
+      <h2>Înregistrează-te</h2>
+      <form (submit)="registerUser()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" [(ngModel)]="email" placeholder="Introduceți email-ul" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Parolă</label>
+          <input type="password" id="password" [(ngModel)]="password" placeholder="Introduceți parola" required />
+        </div>
+        <button type="submit" class="btn">Înregistrează-te</button>
+      </form>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <p>Ai deja un cont? <a routerLink="/login">Conectează-te</a></p>
+    </div>
+  </div>

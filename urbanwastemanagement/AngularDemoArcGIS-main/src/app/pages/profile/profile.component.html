@@ -1,0 +1,39 @@
+<!-- Pagina de Rangs -->
+<div class="rangs-container" *ngIf="profile; else loading">
+  <div class="rangs-header">
+    <label for="rang">Rang: </label>
+    <span id="rang">{{ profile.rankName }}</span>
+  </div>
+
+  <div class="rangs-details">
+    <div class="rangs-avatar">
+      <img [src]="profile.rankUrl" alt="Avatar" class="avatar-image" />
+    </div>
+    <div class="rangs-item">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="profile.username" [disabled]="!isEditing" />
+    </div>
+
+    <div class="rangs-item">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="profile.email" [disabled]="!isEditing" />
+    </div>
+    <div class="rangs-item">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" [(ngModel)]="profile.phone" [disabled]="!isEditing" />
+    </div>
+    <div class="rangs-item">
+      <label for="visits">Visits: </label>
+      <span id="visits">{{ profile.counter }}</span>
+    </div>
+  </div>
+
+  <div class="rangs-actions">
+    <button (click)="editProfile()">Edit Rangs</button>
+    <button (click)="saveProfile()" [disabled]="!isEditing">Save Rangs</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p style="text-align: center;">Se încarcă datele...</p>
+</ng-template>

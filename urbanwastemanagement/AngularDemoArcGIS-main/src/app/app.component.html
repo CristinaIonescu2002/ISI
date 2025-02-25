@@ -1,0 +1,27 @@
+<nav class="navbar" *ngIf="isAuthenticated">
+  <div class="nav-links">
+    <a routerLink="/home" *ngIf="authService.currentUser | async as user; else noUser" [hidden]="user?.role !== 'admin'">Home</a>
+    <a routerLink="/map">Map</a>
+    <a routerLink="/profile" *ngIf="authService.currentUser | async as user; else noUser" [hidden]="user?.role === 'admin'">Profile</a>
+  </div>
+  <div class="nav-actions">
+    <button class="logout-btn" (click)="showLogoutPopup()">Logout</button>
+  </div>
+</nav>
+
+<ng-template #noUser>
+  <span>Nu ești autentificat.</span>
+</ng-template>
+
+<!-- Popup pentru Logout -->
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-content">
+    <p>Ești sigur că vrei să te deconectezi?</p>
+    <button class="btn-confirm" (click)="confirmLogout()">Da</button>
+    <button class="btn-cancel" (click)="cancelLogout()">Nu</button>
+  </div>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

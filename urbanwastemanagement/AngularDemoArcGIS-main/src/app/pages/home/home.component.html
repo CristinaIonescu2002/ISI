@@ -1,0 +1,88 @@
+<div class="waste-management-container">
+    <h3>Gestionează Punctele de Colectare</h3>
+
+    <!-- Conectare Firebase -->
+    <div class="firebase-connection" *ngIf="!isConnected">
+        <button (click)="connectFirebase()">Conectează-te la Firebase</button>
+    </div>
+
+    <!-- Secțiunea activă după conectare -->
+    <div class="content" *ngIf="isConnected">
+        <div class="actions">
+            <label for="csv-upload" class="file-upload-label">Încarcă fișier CSV:</label>
+            <input id="csv-upload" type="file" accept=".csv" (change)="loadCSV($event)" />
+            
+            <button (click)="addListItem()">Adaugă Punct</button>
+            <button (click)="addAllRemainingItems()">Adaugă Toate Datele Rămase</button>
+            <button (click)="setCustomIndex()">Setează Index</button>
+            <button class="delete-button" (click)="clearEntries()">Șterge Toate Datele</button>
+        </div>
+
+        <!-- Afișare mesaj dacă nu există date -->
+        <div *ngIf="listItems.length === 0" class="no-data">
+            Nicio dată disponibilă. Încarcă fișierul CSV sau adaugă puncte manual.
+        </div>
+
+        <!-- Tabel -->
+        <div class="table-container" *ngIf="listItems.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Plastic</th>
+                        <th>Hartie</th>
+                        <th>Carti</th>
+                        <th>Sticla</th>
+                        <th>Metal</th>
+                        <th>Haine</th>
+                        <th>Electronice</th>
+                        <th>Electrocasnice</th>
+                        <th>Ochelari</th>
+                        <th>Baterii</th>
+                        <th>Vapes</th>
+                        <th>Vopsea</th>
+                        <th>Automobile</th>
+                        <th>Antigel</th>
+                        <th>Ulei</th>
+                        <th>Moloz</th>
+                        <th>Telefon</th>
+                        <th>Zile Lucrate</th>
+                        <th>Program</th>
+                        <th>Adresa</th>
+                        <th>Latitudine</th>
+                        <th>Longitudine</th>
+                        <th>Descriere</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listItems">
+                        <td>{{ item.nume }}</td>
+                        <td>{{ item.plastic ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.hartie ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.carti ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.sticla ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.metal ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.haine ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.electronice ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.electrocasnice ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.ochelari ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.baterii ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.vapes ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.vopsea ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.automobile ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.antigel ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.ulei ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.moloz ? 'Da' : 'Nu' }}</td>
+                        <td>{{ item.telefon }}</td>
+                        <td>{{ item.zileLucrate }}</td>
+                        <td>{{ item.program }}</td>
+                        <td>{{ item.adresa }}</td>
+                        <td>{{ item.latitudine }}</td>
+                        <td>{{ item.longitudine }}</td>
+                        <td>{{ item.descriere }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
